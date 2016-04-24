@@ -38,9 +38,20 @@
 # student = {:name => "sai", :city => "hyd", :status => "Dev"}
 # p student
 
-# student = {name: 'sai', city: 'hyd-IN', status: 'dev'}
+ student = {name: 'sai', city: 'hyd-IN', status: 'dev'}
 # p student
 # p student[:city]
+
+p student.methods
+
+#return the all key names
+p student.keys
+
+#return the all values
+p student.values
+#to display all elements inside current hash
+student.each {|key, value| p "#{key} - #{value}"}
+
 
 
 
