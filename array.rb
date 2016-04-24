@@ -62,7 +62,24 @@
 #inject
 #reduce
 list = (1..10).to_a
-
-# p list.collect { |i| i >= 3 && i <= 7 }
-# p list.map { |i| i >= 3 && i <= 7 }
-# p list.select { |i| i >= 3 && i <= 7 }
+ p list
+ p list.each {|i| print "#{i} \t "}
+ p list.collect { |i| i >= 3 && i <= 7 }   #return boolean values
+ p list.map { |i| i >= 3 && i <= 7 }       #return boolean values
+ p list.select { |i| i >= 3 && i <= 7 }    #return element values, which elemets satistfy the condition
+ p list.reject { |i| i >= 3 && i <= 7 }     #return element values, which are not satistfy the condition
+ p list.reduce(:+)
+ 
+ # Sum some numbers
+p (5..10).reduce(:+)                             #=> 45
+# Same using a block and inject
+p (5..10).inject { |sum, n| sum + n }            #=> 45
+# Multiply some numbers
+p (5..10).reduce(1, :*)                          #=> 151200
+# Same using a block
+p (5..10).inject(1) { |product, n| product * n } #=> 151200
+# find the longest word
+longest = %w{ cat sheep bear }.inject do |memo, word|
+   memo.length > word.length ? memo : word
+end
+p longest                                        #=> "sheep"
