@@ -13,6 +13,7 @@ end
   (a..1000).each do |b|
     c = (1000-a-b)
     if (pythagorean_triplet?(a, b, c))
+      puts "a, b, c : #{a}, #{b}, #{c} "
       puts "Answer: " + (a*b*c).to_s
       break
     end
