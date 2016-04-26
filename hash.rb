@@ -53,6 +53,34 @@ p student.values
 student.each {|key, value| p "#{key} - #{value}"}
 
 
+#merging
+h1 = { "a" => 100, "b" => 200 }
+h2 = { "b" => 254, "c" => 300 }
+
+p h1.merge(h2)                                                #=> {"a"=>100, "b"=>254, "c"=>300} 
+p h1.merge(h2){|key, oldval, newval| newval - oldval}         #=> {"a"=>100, "b"=>54, "c"=>300}
+p h1, h2                                                      #=>  {"a"=>100, "b"=>200}  {"b"=>254, "c"=>300}
+
+p h1.merge!(h2){|key, oldval, newval| newval - oldval}        #=> {"a"=>100, "b"=>54, "c"=>300}
+p h1, h2                                                      #=>  {"a"=>100, "b"=>54, "c"=>300}  {"b"=>254, "c"=>300}
+
+
+
+student = {:name=>"saich", :add=>"hyd", :marks=>{:sub1=>76, :sub2=>87, :sub3=>65, :total=>89.05}}
+
+student[:marks]             #=> {:sub1=>76, :sub2=>87, :sub3=>65, :total=>89.05}
+
+#reject required k or values
+student[:marks].reject {|k, v| k.to_s == 'total'}       #=> {:sub1=>76, :sub2=>87, :sub3=>65} 
+
+
+
+
+
+
+
+
+
 
 
 
