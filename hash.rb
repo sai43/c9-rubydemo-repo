@@ -74,6 +74,10 @@ student[:marks]             #=> {:sub1=>76, :sub2=>87, :sub3=>65, :total=>89.05}
 student[:marks].reject {|k, v| k.to_s == 'total'}       #=> {:sub1=>76, :sub2=>87, :sub3=>65} 
 
 
+sum = 0; student[:marks].reject{|k, v| k.to_s == 'total' }.each {|k, v| sum += v }
+p sum   #=> 228
+
+
 
 
 
