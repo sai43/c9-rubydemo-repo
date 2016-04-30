@@ -1,18 +1,20 @@
 #class
 
-# class MyStuff
+class MyStuff
+    
+    def initialize()
+        @tangerine = "And now a thousand years between"
+    end
 
-#     def initialize()
-#         @tangerine = "And now a thousand years between"
-#     end
+    attr_reader :tangerine
+    # attr_writer :tangerine
+    # attr_accessor :tangerine
 
-#     attr_reader :tangerine
+    def apple()
+        puts "I AM CLASSY APPLES!"
+    end
 
-#     def apple()
-#         puts "I AM CLASSY APPLES!"
-#     end
-
-# end
+end
 
 
 # thing = MyStuff.new()
