@@ -9,5 +9,5 @@
 
 require_relative 'mytrig'  
 require_relative 'mymoral'  
-Trig.sin(Trig::PI/4)  
-Moral.sin(Moral::VERY_BAD) 
+Trig.sin(Trig::PI/4)         #trig sin method
+Moral.sin(Moral::VERY_BAD)   #'moral sin method
