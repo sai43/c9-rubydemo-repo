@@ -1,6 +1,6 @@
 module D  
   def initialize(name)  
-    @name =name  
+    @name = name  
   end  
   def to_s  
     @name  
@@ -12,7 +12,7 @@ module Debug
   # Methods that act as queries are often  
   # named with a trailing ?  
   def who_am_i?  
-    "#{self.class.name} (\##{self.object_id}): #{self.to_s}"  
+    "#{self.class.name} (\##{self.object_id}): #{self.to_s}\n\t"  
   end  
 end  
   

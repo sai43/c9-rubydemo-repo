@@ -1,4 +1,4 @@
-require_relative 'stuff'     # loads Stuff module from Stuff.rb  
+require_relative 'stuff'     # loads Stuff module from stuff.rb  
                              # $: is a system variable -- contains the path for loads  
 class D  
   include Stuff     # refers to the loaded module  
