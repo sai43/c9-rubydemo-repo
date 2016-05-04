@@ -16,7 +16,8 @@ end
 puts Stuff::C     # Stuff namespace  
 puts Stuff.m(3)   # like a class method  
 x = Stuff::T.new
-puts x.inspect
+p x
+#puts x.inspect
 # uninitialized constant error, if you try the following  
 # puts C  
 #------------
