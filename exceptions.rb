@@ -35,6 +35,153 @@
 # In an event that an exception does not match any of the error types specified, we are allowed
 # to use an else clause after all the rescue clauses.
 
+#Using retry Statement:
+
+# begin
+#     # Exceptions raised by this code will 
+# 	# be caught by the following rescue clause
+# rescue
+#     # This block will capture all types of exceptions
+#     retry  # This will move control to the beginning of begin
+# end
+
+begin
+   file = open("/unexistant_file")
+   if file
+      puts "File opened successfully"
+   end
+rescue
+   fname = "existant_file"
+   retry
+end
+
+# The following is the flow of the process:
+# an exception occurred at open
+# went to rescue. fname was re-assigned
+# by retry went to the beginning of the begin
+# this time file opens successfully
+# continued the essential process.
+
+# NOTE: Notice that if the file of re-substituted name does not exist this example code retries infinitely. Be careful if you use retry for an exception process.
+
+
+
+#using raise statement
+
+# raise 
+# OR
+# raise "Error Message" 
+# OR
+# raise ExceptionType, "Error Message"
+# OR
+# raise ExceptionType, "Error Message" condition
+
+#ex1:
+begin  
+    puts 'I am before the raise.'  
+    raise 'An error has occurred.'  
+    puts 'I am after the raise.'  
+rescue  
+    puts 'I am rescued.'  
+end  
+puts 'I am after the begin block.' 
+
+#ex2:
+begin  
+  raise 'A test exception.'  
+rescue Exception => e  
+  puts e.message  
+  puts e.backtrace.inspect  
+end  
+
+
+
+# using ensure statement 
+
+# begin 
+#   #.. process 
+#   #..raise exception
+# rescue 
+#   #.. handle error 
+# ensure 
+#   #.. finally ensure execution
+#   #.. This will always execute.
+# end
+
+#ex:
+begin
+  raise 'A test exception.'
+rescue Exception => e
+  puts e.message
+  puts e.backtrace.inspect
+ensure
+  puts "Ensuring execution"
+end
+
+#Using else Statement
+
+# begin 
+#   #.. process 
+#   #..raise exception
+# rescue 
+#   # .. handle error
+# else
+#   #.. executes if there is no exception
+# ensure 
+#   #.. finally ensure execution
+#   #.. This will always execute.
+# end
+
+#ex;
+
+begin
+ # raise 'A test exception.'
+ puts "I'm not raising exception"
+rescue Exception => e
+  puts e.message
+  puts e.backtrace.inspect
+else
+   puts "Congratulations-- no errors!"
+ensure
+  puts "Ensuring execution"
+end
+
+#Catch and Throw:
+#syntax
+
+# throw :lablename
+# #.. this will not be executed
+# catch :lablename do
+# #.. matching catch will be executed after a throw is encountered.
+# end
+
+# OR
+
+# throw :lablename condition
+# #.. this will not be executed
+# catch :lablename do
+# #.. matching catch will be executed after a throw is encountered.
+# end
+
+#Ex:
+
+def promptAndGet(prompt)
+   print prompt
+   res = readline.chomp
+   throw :quitRequested if res == "!"
+   return res
+end
+
+catch :quitRequested do
+   name = promptAndGet("Name: ")
+   age = promptAndGet("Age: ")
+   sex = promptAndGet("Sex: ")
+   # ..
+   # process information
+end
+promptAndGet("Name:")
+
+
 
 #some keywords in exception class
 #begin
