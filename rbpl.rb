@@ -1,5 +1,7 @@
-#definition of blocks is "A section of code which is grouped together." Of course, I'm guessing this doesn't help you much.
-#A simpler way to describe blocks is “A block is code that you can store in a variable like any other object and run on demand.”
+#definition of blocks is "A section of code which is grouped together." Of course, 
+# I'm guessing this doesn't help you much.
+#A simpler way to describe blocks is
+#“A block is code that you can store in a variable like any other object and run on demand.”
 
 puts 5+6
 
@@ -8,6 +10,7 @@ b = 6
 puts a + b
 
 addition = lambda {|a, b| return a + b }
+#addition = proc {|a, b| return a + b }
 puts addition.call(5, 6)
 
 empty_block = lambda { }
