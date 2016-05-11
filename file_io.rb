@@ -3,7 +3,7 @@
 #All the I/O methods are derived from the class IO.
 
 #The class IO provides all the basic methods, 
-#such as read, write, gets, puts, readline, getc, and printf.
+#such as read, write, gets, puts, readline, getc,putc, and printf.
 
 #
 # You can create a File object using File.new method for reading, writing, or both,
@@ -12,7 +12,7 @@
 # File.new
 #syntax
 # aFile = File.new("filename", "mode")
-#   # ... process the file
+#    # ... process the file
 # aFile.close
 
 #File.open

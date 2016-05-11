@@ -1,3 +1,4 @@
+puts 'hello world'
 #ruby modules are like hashes
 
 # module are class name always starts with Capital letter and every word first letter should be capital ....

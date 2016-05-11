@@ -280,3 +280,30 @@ raise_and_rescue
 #NoMethodError, NameError, IOError, TypeError and ArgumentError.
 
 
+# Basic example:
+
+begin
+    puts "Enter two numbers: "
+    a = gets.chomp.to_i
+    b = gets.chomp.to_i
+    reminder = a/b 
+    # if b > 0 then return divison value
+    # else return 'a' value as a division value   
+    puts reminder
+    #raise ZeroDivisionError
+rescue ZeroDivisionError => e
+    # puts e.message
+    # puts e.backtrace.inspect
+    #puts "Enter second value must be > 0 to get result"
+    puts "Enter b value > 0"
+    b = gets.chomp.to_i
+    reminder = a/b
+    p reminder
+else
+    # other exception
+ensure
+    # always executed
+    p reminder unless reminder.nil?
+end
+
+
