@@ -50,3 +50,18 @@ happy_bday.sing_me_a_song
 
 #----------
 
+
+klass = Class.new do
+  def initialize(*args)
+    @initialized = true
+    @args = args
+  end
+
+  def initialized?
+    @initialized || false
+  end
+end
+
+klass.allocate.initialized? #=> false
+
+

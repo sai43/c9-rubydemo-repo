@@ -83,3 +83,14 @@ longest = %w{ cat sheep bear }.inject do |memo, word|
    memo.length > word.length ? memo : word
 end
 p longest                                        #=> "sheep"
+
+
+ def get_marks
+  p total = (1..100).to_a.shuffle.first(5).reduce(:+)                                                             
+  case total
+    when 380..499; print "1st class"                                                                        
+    when 250..279; print '2nd class'
+   else
+     print "i don't know"
+   end
+ end
